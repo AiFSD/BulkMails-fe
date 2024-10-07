@@ -1,0 +1,47 @@
+.premium-page {
+    padding: 20px;
+}
+
+.price-cards-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.benefits-section,
+.privacy-terms-section,
+.payment-details-section,
+.data-security-section {
+    margin: 20px 0;
+}
+
+.next-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.next-button:hover {
+    background-color: #0056b3;
+}
+.swipe-message {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #007bff;
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

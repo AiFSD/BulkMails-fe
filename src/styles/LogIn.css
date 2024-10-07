@@ -1,0 +1,108 @@
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f4f8;
+}
+
+.login-background {
+    position: relative;
+    width: 55%;
+    height: 80%;
+    background-image: url('https://i.pinimg.com/736x/06/a4/c0/06a4c0bd4786f1366d7aa380404da498.jpg');
+   
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    border: 6px solid #345675;
+    box-shadow: 2px 2px 52px 2px black;
+}
+
+
+
+
+.login-form {
+    position: relative;
+    width: 40%;
+    background-color: #345675;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    transform: translateX(-40px);
+
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    color: white;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 0.5rem;
+    outline: none;
+}
+
+.error-message {
+    color: #ff6b6b;
+    font-size: 0.9rem;
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+.form-check input {
+    margin-right: 0.5rem;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #0a74da;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #095bb5;
+}
+.form-group p {
+    color: white;
+    /* Set text color to white */
+    font-weight: bold;
+    /* Make text bold */
+    margin-top: 1rem;
+    /* Optional: add some space above */
+}
+
+.form-group a {
+    color: white;
+    /* Set link color to white */
+    text-decoration: none;
+    /* Optional: remove underline from link */
+}
+
+.form-group a:hover {
+    text-decoration: underline;
+    /* Optional: add underline on hover */
+}

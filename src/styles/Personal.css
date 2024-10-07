@@ -1,0 +1,56 @@
+.personal-info-card {
+    background-color: #f8f9fa;
+    
+    border: 1px solid #dee2e6;
+   
+    border-radius: 0.5rem;
+  
+    max-width: 500px;
+   
+    margin: auto;
+    
+    padding: 20px;
+   
+}
+
+.profile-icon-container {
+    width: 100px;
+ 
+    height: 100px;
+    
+    background-color: #007bff;
+   
+    border-radius: 50%;
+   
+    display: flex;
+    
+    align-items: center;
+    
+    justify-content: center;
+   
+    color: white;
+   
+    margin: 20px auto;
+   
+}
+
+.profile-icon {
+    font-size: 3rem;
+    
+}
+
+.personal-info-row {
+    display: flex;
+   
+    justify-content: space-between;
+    
+    padding: 5px 0;
+
+    border-bottom: 1px solid #dee2e6;
+    
+}
+
+.personal-info-row:last-child {
+    border-bottom: none;
+    
+}

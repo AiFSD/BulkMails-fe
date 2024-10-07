@@ -1,0 +1,24 @@
+/* NewsTicker.css */
+.news-ticker {
+    background-color: #0056b3;
+    color: white;
+    padding: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+
+.news-ticker p {
+    display: inline-block;
+    animation: scroll 15s linear infinite;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}

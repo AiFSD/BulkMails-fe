@@ -1,0 +1,57 @@
+.track-logs {
+    padding: 20px;
+}
+
+.track-log-cards {
+    display: flex;
+    flex-wrap: wrap;
+   
+    gap: 20px;
+    
+}
+
+.track-log-card {
+    background-color: #f8f9fa;
+   
+    border: 1px solid #dee2e6;
+   
+    border-radius: 8px;
+  
+    padding: 15px;
+  
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    transition: transform 0.2s;
+  
+    flex: 1 1 calc(30% - 20px);
+
+}
+
+.track-log-card:hover {
+    transform: scale(1.05);
+    
+}
+
+.track-log-card h4 {
+    margin: 0 0 10px;
+  
+}
+
+.track-log-card p {
+    margin: 0 0 10px;
+
+}
+
+.track-log-card button {
+    background-color: #007bff;
+   
+    color: white;
+
+    border: none;
+   
+    border-radius: 5px;
+   
+    padding: 10px 15px;
+ 
+    cursor: pointer;
+}

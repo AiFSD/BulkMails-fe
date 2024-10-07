@@ -1,0 +1,64 @@
+/* General styles for the help page */
+.help-container {
+    font-family: Arial, sans-serif;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+.hero-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.hero-title {
+    font-size: 36px;
+    color: #333;
+    margin: 0;
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    color: #555;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-section,
+.contact-section,
+.faq-section {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    font-size: 24px;
+    color: #333;
+    margin: 0 0 10px;
+}
+
+.section-description {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+    .content {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .info-section,
+    .contact-section,
+    .faq-section {
+        flex: 1;
+        margin: 0;
+    }
+}
