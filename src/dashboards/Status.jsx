@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom"; 
-import "../styles/status.css"; 
+import "/src/styles/status.css"; 
 
 const Status = () => {
   const [events, setEvents] = useState([]);
