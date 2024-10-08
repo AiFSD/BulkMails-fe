@@ -22,7 +22,7 @@ import ResetPassword from "./components/ResetPassword";
 import "bootstrap/dist/css/bootstrap.min.css";
 import MailDetails from "./pages/MailDetails";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import EditUser from "./pages/EditUser";
+
 import NotificationSettings from "./pages/NotificationSettings";
 import PrivacySettings from "./pages/PrivacySettings";
 import LanguageSettings from "./pages/LanguageSettings";
