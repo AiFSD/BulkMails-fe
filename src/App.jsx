@@ -6,13 +6,13 @@ import {
   Navigate,
 } from "react-router-dom";
 import { AuthProvider } from "./context/authContext";
-import SendMails from "./Dashboards/SendMails";
-import Personal from "./Dashboards/Personal";
-import SettingsPage from "./Dashboards/SettingsPage";
-import Help from "./Dashboards/Help";
+import SendMails from "./dashboards/SendMails";
+import Personal from "./dashboards/Personal";
+import SettingsPage from "./dashboards/SettingsPage";
+import Help from "./dashboards/Help";
 import Registration from "./components/Registration";
 import LogIn from "./components/LogIn";
-import Navigation from "./Dashboards/Navigation";
+import Navigation from "./dashboards/Navigation";
 import Home from "./dashboards/Home";
 import History from "./dashboards/History";
 import Status from "./dashboards/Status";
