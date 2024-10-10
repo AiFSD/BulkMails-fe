@@ -42,7 +42,7 @@ const TrackLogs = () => {
   useEffect(() => {
     const fetchTrackLogs = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/track-logs");
+        const response = await axios.get("https://bulkmails-be-1.onrender.com/api/track-logs");
         setTrackLogs(response.data);
       } catch (error) {
         console.error("Error fetching track logs:", error);
@@ -109,7 +109,7 @@ const History = () => {
     const fetchEmailEvents = async () => {
       setLoading(true);
       try {
-        const response = await axios.get("http://localhost:5000/api/email-events");
+        const response = await axios.get("https://bulkmails-be-1.onrender.com/api/email-events");
         const emailEventsData = response.data;
         if (Array.isArray(emailEventsData)) {
           setEmailEvents(emailEventsData);

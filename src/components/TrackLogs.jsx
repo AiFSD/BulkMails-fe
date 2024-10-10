@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom";
 import "../styles/TrackLogs.css";
 
 const TrackLogs = () => {
   const [trackLogs, setTrackLogs] = useState([]);
   const [loading, setLoading] = useState(true);
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchTrackLogs = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/track-logs"
+          "https://bulkmails-be-1.onrender.com/api/track-logs"
         );
         setTrackLogs(response.data);
       } catch (error) {

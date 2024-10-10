@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom"; 
+import { useParams } from "react-router-dom";
 import axios from "axios";
-import "../styles/MailDetails.css"; 
+import "../styles/MailDetails.css";
 const MailDetails = () => {
-  const { id } = useParams(); 
+  const { id } = useParams();
   const [emailEvent, setEmailEvent] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -11,7 +11,7 @@ const MailDetails = () => {
     const fetchEmailEvent = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/email-events/${id}`
+          `https://bulkmails-be-1.onrender.com/api/email-events/${id}`
         );
         setEmailEvent(response.data);
       } catch (error) {

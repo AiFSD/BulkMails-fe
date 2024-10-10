@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { useAuth } from "../context/authContext"; 
+import { useAuth } from "../context/authContext";
 import "../styles/EditForm.css";
 
 const EditUser = () => {
-  const { userId } = useParams(); 
+  const { userId } = useParams();
   const { user } = useAuth();
   const navigate = useNavigate();
 
@@ -23,7 +23,6 @@ const EditUser = () => {
   });
 
   useEffect(() => {
- 
     if (user) {
       setFormData({
         firstName: user.firstName || "",
@@ -57,7 +56,7 @@ const EditUser = () => {
       };
 
       const response = await fetch(
-        `http://localhost:5000/api/users/${userId}`,
+        `https://bulkmails-be-1.onrender.com/api/users/${userId}`,
         {
           method: "PUT",
           headers: {
@@ -68,7 +67,7 @@ const EditUser = () => {
       );
 
       if (response.ok) {
-        navigate("/personal"); 
+        navigate("/personal");
       } else {
         console.error("Failed to update user", await response.json());
       }

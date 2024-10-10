@@ -23,7 +23,10 @@ const LogIn = () => {
 const onSubmit = async (values) => {
   console.log("Login button pressed!");
   try {
-    const response = await axios.post("http://localhost:5000/login", values);
+    const response = await axios.post(
+      "https://bulkmails-be-1.onrender.com/login",
+      values
+    );
     console.log("Response data:", response.data);
 
     const { token, userId, ...userData } = response.data;

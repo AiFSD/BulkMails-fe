@@ -39,57 +39,56 @@ const SendMails = () => {
     setAttachment(file);
   };
 
- const handleSubmit = async (e) => {
-   e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-   const fileInput = document.getElementById("file");
-   const file = fileInput.files[0];
-   const reader = new FileReader();
+    const fileInput = document.getElementById("file");
+    const file = fileInput.files[0];
+    const reader = new FileReader();
 
-   reader.onload = async (event) => {
-     try {
-       const data = event.target.result;
-       const parsedData = JSON.parse(data);
+    reader.onload = async (event) => {
+      try {
+        const data = event.target.result;
+        const parsedData = JSON.parse(data);
 
-       const recipients = JSON.stringify(parsedData.map((item) => item.email));
+        const recipients = JSON.stringify(parsedData.map((item) => item.email));
 
-       const formData = new FormData();
-       formData.append("recipients", recipients);
-       formData.append("subject", subject);
-       formData.append("body", body);
-       formData.append("title", title); 
-       if (attachment) formData.append("attachment", attachment);
+        const formData = new FormData();
+        formData.append("recipients", recipients);
+        formData.append("subject", subject);
+        formData.append("body", body);
+        formData.append("title", title);
+        if (attachment) formData.append("attachment", attachment);
 
-       console.log("Form Data:", {
-         recipients,
-         subject,
-         body,
-         title,
-         attachment,
-       });
+        console.log("Form Data:", {
+          recipients,
+          subject,
+          body,
+          title,
+          attachment,
+        });
 
-       const response = await axios.post(
-         "http://localhost:5000/api/send-bulk-emails",
-         formData,
-         {
-           headers: {
-             "Content-Type": "multipart/form-data",
-           },
-         }
-       );
-       alert("Emails sent successfully");
-     } catch (error) {
-       console.error(
-         "Error sending emails:",
-         error.response ? error.response.data : error
-       );
-       alert("Failed to send emails");
-     }
-   };
+        const response = await axios.post(
+          "https://bulkmails-be-1.onrender.com/api/send-bulk-emails",
+          formData,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          }
+        );
+        alert("Emails sent successfully");
+      } catch (error) {
+        console.error(
+          "Error sending emails:",
+          error.response ? error.response.data : error
+        );
+        alert("Failed to send emails");
+      }
+    };
 
-   reader.readAsText(file);
- };
-
+    reader.readAsText(file);
+  };
 
   return (
     <>
@@ -126,7 +125,7 @@ const SendMails = () => {
             type="file"
             id="file"
             onChange={handleFileUpload}
-            accept=".csv, .json" 
+            accept=".csv, .json"
           />
           <br />
           <label className="label" htmlFor="subject">

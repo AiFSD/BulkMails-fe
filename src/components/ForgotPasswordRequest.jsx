@@ -9,19 +9,18 @@ const ForgotPasswordRequest = () => {
     event.preventDefault();
 
     try {
-    const response = await fetch(
-      "http://localhost:5000/api/auth/forgot-password",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
-      }
-    );
-
+      const response = await fetch(
+        "https://bulkmails-be-1.onrender.com/api/auth/forgot-password",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email }),
+        }
+      );
 
       if (response.ok) {
         setSuccessMessage("Password reset email sent!");
-        setEmail(""); 
+        setEmail("");
       } else {
         const data = await response.json();
         setErrorMessage(data.message);
@@ -32,14 +31,13 @@ const ForgotPasswordRequest = () => {
     }
   };
 
-   return (
+  return (
     <div className="container">
       <div className="row justify-content-center">
         <div className="col-md-6">
           <div className="card">
             <div className="card-header">
-              <h2>Forgot   
- Password</h2>
+              <h2>Forgot   Password</h2>
             </div>
             <div className="card-body">
               <form onSubmit={handleSubmit}>
@@ -47,19 +45,21 @@ const ForgotPasswordRequest = () => {
                   <label htmlFor="email">Email Address:</label>
                   <input
                     type="email"
-                    className="form-control"   
-
+                    className="form-control"
                     id="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
                   />
-                </div>   
-
-                {errorMessage && <p className="alert alert-danger">{errorMessage}</p>}
-                {successMessage && <p className="alert alert-success">{successMessage}</p>}
-                <button type="submit"   
- className="btn btn-primary">
+                </div>{" "}
+                 
+                {errorMessage && (
+                  <p className="alert alert-danger">{errorMessage}</p>
+                )}
+                {successMessage && (
+                  <p className="alert alert-success">{successMessage}</p>
+                )}
+                <button type="submit" className="btn btn-primary">
                   Send Reset Link
                 </button>
               </form>
@@ -72,5 +72,3 @@ const ForgotPasswordRequest = () => {
 };
 
 export default ForgotPasswordRequest;
-
-

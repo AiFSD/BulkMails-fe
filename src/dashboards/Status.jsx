@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom"; 
-import "/src/styles/status.css"; 
+import { useNavigate } from "react-router-dom";
+import "/src/styles/status.css";
 
 const Status = () => {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchEvents = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/email-events"
+          "https://bulkmails-be-1.onrender.com/api/email-events"
         );
         setEvents(response.data);
       } catch (error) {

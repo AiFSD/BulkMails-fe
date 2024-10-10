@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate, Link } from "react-router-dom"; 
+import { useNavigate, Link } from "react-router-dom";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import axios from "axios";
 import "../styles/Registration.css";
@@ -9,38 +9,41 @@ const Registration = () => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [customName, setCustomName] = useState(""); 
-  const [dateOfBirth, setDateOfBirth] = useState(""); 
+  const [customName, setCustomName] = useState("");
+  const [dateOfBirth, setDateOfBirth] = useState("");
   const [selectedIcon, setSelectedIcon] = useState("");
   const [interests, setInterests] = useState("");
-  const [experienceLevel, setExperienceLevel] = useState(""); 
+  const [experienceLevel, setExperienceLevel] = useState("");
   const [marketingConsent, setMarketingConsent] = useState(false);
   const [preferredContactTime, setPreferredContactTime] = useState("");
   const [newsletterSubscription, setNewsletterSubscription] = useState(false);
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/api/register", {
-        firstName,
-        lastName,
-        email,
-        password,
-        customName,
-        dateOfBirth,
-        selectedIcon,
-        interests: interests.split(",").map((interest) => interest.trim()), 
-        experienceLevel,
-        marketingConsent,
-        preferredContactTime,
-        newsletterSubscription,
-      });
-      console.log(response.data.message); 
-      navigate("/login"); 
+      const response = await axios.post(
+        "https://bulkmails-be-1.onrender.com/api/register",
+        {
+          firstName,
+          lastName,
+          email,
+          password,
+          customName,
+          dateOfBirth,
+          selectedIcon,
+          interests: interests.split(",").map((interest) => interest.trim()),
+          experienceLevel,
+          marketingConsent,
+          preferredContactTime,
+          newsletterSubscription,
+        }
+      );
+      console.log(response.data.message);
+      navigate("/login");
     } catch (error) {
       if (error.response && error.response.status === 400) {
-        alert(error.response.data.message); 
+        alert(error.response.data.message);
       } else {
         console.error(
           "There was an error registering the user!",
@@ -57,7 +60,6 @@ const Registration = () => {
           <Col xs={12} md={6} lg={4} className="registration-form">
             <h2>Register Now</h2>
             <Form onSubmit={handleSubmit}>
-              
               <Form.Group controlId="firstName">
                 <Form.Label>First Name</Form.Label>
                 <Form.Control
@@ -91,7 +93,6 @@ const Registration = () => {
                 />
               </Form.Group>
 
-        
               <Form.Group controlId="customName">
                 <Form.Label>Your Name for Us</Form.Label>
                 <Form.Control
@@ -141,7 +142,7 @@ const Registration = () => {
                   </div>
                 </div>
               </Form.Group>
-              
+
               <Form.Group controlId="interests">
                 <Form.Label>Interests (comma-separated)</Form.Label>
                 <Form.Control
@@ -152,7 +153,6 @@ const Registration = () => {
                 />
               </Form.Group>
 
-       
               <Form.Group controlId="experienceLevel">
                 <Form.Label>Experience Level</Form.Label>
                 <Form.Control
@@ -167,7 +167,6 @@ const Registration = () => {
                 </Form.Control>
               </Form.Group>
 
-          
               <Form.Group controlId="marketingConsent">
                 <Form.Check
                   type="checkbox"
@@ -179,7 +178,6 @@ const Registration = () => {
                 />
               </Form.Group>
 
-         
               <Form.Group controlId="preferredContactTime">
                 <Form.Label>Preferred Contact Time</Form.Label>
                 <Form.Control
@@ -196,7 +194,6 @@ const Registration = () => {
                 </Form.Control>
               </Form.Group>
 
-             
               <Form.Group controlId="newsletterSubscription">
                 <Form.Check
                   type="checkbox"
@@ -213,7 +210,6 @@ const Registration = () => {
               </Button>
             </Form>
 
-        
             <p className="mt-3">
               Already have an account?{" "}
               <Link to="/login" style={{ color: "white" }}>

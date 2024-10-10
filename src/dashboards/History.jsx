@@ -7,14 +7,14 @@ const History = () => {
   const [emailEvents, setEmailEvents] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchEmailEvents = async () => {
       setLoading(true);
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/email-events"
+          "https://bulkmails-be-1.onrender.com/api/email-events"
         );
         const emailEventsData = response.data;
         if (Array.isArray(emailEventsData)) {
@@ -62,7 +62,7 @@ const History = () => {
               </p>
               <button
                 className="view-mail-button"
-                onClick={() => navigate(`/mail-details/${emailEvent._id}`)} 
+                onClick={() => navigate(`/mail-details/${emailEvent._id}`)}
               >
                 View Mail
               </button>
